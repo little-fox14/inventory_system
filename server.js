@@ -1,3 +1,5 @@
+
+
 import express from"express";
 import colors from "colors";
 import dotenv from "dotenv";
@@ -8,10 +10,14 @@ import authRouts from "./routes/authRouts.js"
 import categoryRoutes from "./routes/categoryRoute.js"
 import productRoutes from "./routes/productRoutes.js"
 import path from "path"
+import {fileURLToPath} from "url"
 //configure 
 dotenv.config()
 //database config
 
+const __filename=fileURLToPath(import.meta.url);
+const __dirname=path.dirname(__filename);
+  
 connectDb();
 const app=express()
 //
